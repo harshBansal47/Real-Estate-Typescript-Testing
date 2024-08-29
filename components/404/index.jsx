@@ -9,7 +9,7 @@ const index = () => {
   return (
     <>
       {/* <!-- Main Header Nav --> */}
-      <Header />
+      {/* <Header /> */}
 
       {/* <!--  Mobile Menu --> */}
       <MobileMenu />
@@ -29,20 +29,20 @@ const index = () => {
       </section>
 
       {/* <!-- Our Footer --> */}
-      <section className="footer_one">
+      {/* <section className="footer_one">
         <div className="container">
           <div className="row">
             <Footer />
           </div>
         </div>
-      </section>
+      </section> */}
 
       {/* <!-- Our Footer Bottom Area --> */}
-      <section className="footer_middle_area pt40 pb40">
+      {/* <section className="footer_middle_area pt40 pb40">
         <div className="container">
           <CopyrightFooter />
         </div>
-      </section>
+      </section> */}
     </>
   );
 };

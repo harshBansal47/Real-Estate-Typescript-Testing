@@ -10,12 +10,14 @@ import Team from "./Team";
 import CopyrightFooter from "../commons/Footer/CopyrightFooter";
 import Footer from "../commons/Footer/Footer";
 import PopupSignInUp from "../commons/PopupSignInUp";
+import Navbar from "../commons/Navbar/Navbar";
 
 const index = () => {
   return (
     <>
       {/* <!-- Main Header Nav --> */}
-      <Header />
+      {/* <Header /> */}
+      <Navbar/>
 
       {/* <!--  Mobile Menu --> */}
       <MobileMenu />

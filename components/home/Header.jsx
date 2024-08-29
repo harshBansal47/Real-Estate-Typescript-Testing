@@ -54,7 +54,7 @@ const Header = () => {
         {/* End .navbar */}
       </div>
     </header>
-    // {/* <!-- /.theme-main-menu --> */}
+    
   );
 };
 
