@@ -27,7 +27,6 @@ const LoginSignup = () => {
 
     const handleSubmit = async (e) => {
       e.preventDefault();
-      console.log("creds",JSON.stringify(credentials))
       try {
         const response = await fetch('/api/login', {
           method: 'POST',
