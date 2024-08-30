@@ -2,9 +2,14 @@
 import Link from "next/link";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
+import { useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { openModal } from "@/features/modal/modalSlice";
 
 export default function Navbar() {
     const path = usePathname();
+    const dispatch = useDispatch();
+    const isModalOpen = useSelector((state) => state.modal.isModalOpen);
 
     return (
         <header
@@ -32,7 +37,7 @@ export default function Navbar() {
                 {/* site logo brand */}
 
                 <nav>
-                    <ul  id="respMenu" className="ace-responsive-menu text-end d-lg-block d-none" data-menu-style="horizontal">
+                    <ul id="respMenu" className="ace-responsive-menu text-end d-lg-block d-none" data-menu-style="horizontal">
                         <li className="dropitem">
                             <Link href="/" className={path === "/" ? "ui-active" : undefined}><span className="title">Home</span></Link>
                         </li>
@@ -81,15 +86,15 @@ export default function Navbar() {
 
 
                         <li className={`list-inline-item list_s`}>
-        <a
-          href="#"
-          className="btn flaticon-user"
-          data-bs-toggle="modal"
-          data-bs-target=".bd-example-modal-lg"
-        >
-          <span className="dn-lg">Login/Register</span>
-        </a>
-      </li>
+                            <button
+                                className="btn flaticon-user"
+                                data-bs-toggle="modal"
+                                data-bs-target=".bd-example-modal-lg"
+                                onClick={() => {if(isModalOpen===false){dispatch(openModal())}}}
+                            >
+                                <span className="dn-lg">Login/Register</span>
+                            </button>
+                        </li>
 
                         <li className="list-inline-item add_listing">
                             <Link href="/create-listing">
