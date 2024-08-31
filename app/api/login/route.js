@@ -1,5 +1,4 @@
 
-import { NextRequest, NextResponse } from "next/server";
 
 
 export async function POST(req, res) {
@@ -42,7 +41,15 @@ export async function POST(req, res) {
         const data = await expressResponse.json();
 
         // Send the data back to the client
-        res.status(200).json(data);
+        return new Response(JSON.stringify(data), {
+          headers: {
+            'Content-Type': 'application/json',
+            'Cache-Control': 's-maxage=300, stale-while-revalidate'
+          },
+          status: 200,
+          statusText: 'OK'
+        })
+
       } else {
         console.log('Unexpected request body type');
         res.status(400).json({ message: 'Invalid request body' });
@@ -53,6 +60,6 @@ export async function POST(req, res) {
     }
   } else {
     // Handle any non-POST requests
-    res.status(405).end(`Method ${req.method} Not Allowed`);
+    res.status(405).send(`Method ${req.method} Not Allowed`);
   }
 }

@@ -1,6 +1,6 @@
 import Blogs from "../commons/Blogs";
 import GlobalHeroFilter from "../commons/GlobalHeroFilter";
-import MobileMenu from "../commons/header/MobileMenu";
+
 import FeaturedProperties from "./FeaturedProperties";
 import FindProperties from "./FindProperties";
 import Header from "./Header";
@@ -17,13 +17,13 @@ const index = () => {
     <>
       {/* <!-- Main Header Nav --> */}
       {/* <Header /> */}
-      <Navbar/>
+      {/* <Navbar/> */}
 
       {/* <!--  Mobile Menu --> */}
-      <MobileMenu />
+      {/* <MobileMenu /> */}
 
       {/* <!-- Modal --> */}
-      <PopupSignInUp />
+      {/* <PopupSignInUp /> */}
 
       {/* <!-- 4th Home Slider --> */}
       <div className="home-four ">

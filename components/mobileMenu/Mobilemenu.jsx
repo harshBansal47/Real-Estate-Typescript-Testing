@@ -42,7 +42,7 @@ const MobileMenu = () => {
       </div>
       {/* <!-- /.mobile-menu --> */}
 
-      <div
+      {/* <div
         className="offcanvas offcanvas-start"
         tabIndex="-1"
         id="offcanvasMenu"
@@ -50,7 +50,7 @@ const MobileMenu = () => {
         data-bs-scroll="true"
       >
         <MobileMenuContent />
-      </div>
+      </div> */}
     </div>
   );
 };

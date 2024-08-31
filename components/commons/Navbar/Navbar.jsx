@@ -10,6 +10,8 @@ export default function Navbar() {
     const path = usePathname();
     const dispatch = useDispatch();
     const isModalOpen = useSelector((state) => state.modal.isModalOpen);
+    const { username, isLoggedIn, role } = useSelector((state) => state.login);
+
 
     return (
         <header
@@ -73,28 +75,32 @@ export default function Navbar() {
                                 </li>
                             </ul>
                         </li>
-                        {/* <li className="dropitem">
-                            <Image
-                                width={45}
-                                height={45}
-                                className="rounded-circle"
-                                src="/assets/images/team/e1.png"
-                                alt="e1.png"
-                            />
-                            <span className="dn-1199 ms-1">Admin</span>
-                        </li> */}
+
+                        {
+                            isLoggedIn ? (
+                                <div className="btn  flexbox" >
+                                    <div className="user-button">
+                                        <div className="user-avatar">{username[0].toUpperCase()}</div>
+                                        <div className="username">{username}</div>
+                                    </div>
+
+                                </div>
+                            ) : (<li className={`list-inline-item list_s`}>
+                                <button
+                                    className="btn flaticon-user"
+                                    data-bs-toggle="modal"
+                                    data-bs-target=".bd-example-modal-lg"
+                                    onClick={() => { if (isModalOpen === false) { dispatch(openModal()) } }}
+                                >
+                                    <span className="dn-lg">Login/Register</span>
+                                </button>
+                            </li>
+                            )
+                        }
+
+                        {/*  */}
 
 
-                        <li className={`list-inline-item list_s`}>
-                            <button
-                                className="btn flaticon-user"
-                                data-bs-toggle="modal"
-                                data-bs-target=".bd-example-modal-lg"
-                                onClick={() => {if(isModalOpen===false){dispatch(openModal())}}}
-                            >
-                                <span className="dn-lg">Login/Register</span>
-                            </button>
-                        </li>
 
                         <li className="list-inline-item add_listing">
                             <Link href="/create-listing">

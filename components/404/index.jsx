@@ -1,7 +1,7 @@
 import CopyrightFooter from "@/components/commons/Footer/CopyrightFooter";
 import Footer from "../commons/Footer/Footer";
-import Header from "../commons/header/DefaultHeader";
-import MobileMenu from "../commons/header/MobileMenu";
+// import Header from "../commons/header/DefaultHeader";
+// import MobileMenu from "../commons/header/MobileMenu";
 import PopupSignInUp from "../commons/PopupSignInUp";
 import ErrorPageContent from "./ErrorPageContent";
 
@@ -11,11 +11,11 @@ const index = () => {
       {/* <!-- Main Header Nav --> */}
       {/* <Header /> */}
 
-      {/* <!--  Mobile Menu --> */}
-      <MobileMenu />
+      {/* <!--  Mobile Menu -->
+      <MobileMenu /> */}
 
-      {/* <!-- Modal --> */}
-      <PopupSignInUp />
+      {/* <!-- Modal -->
+      <PopupSignInUp /> */}
 
       {/* <!-- Our Error Page --> */}
       <section className="our-error bgc-f7">

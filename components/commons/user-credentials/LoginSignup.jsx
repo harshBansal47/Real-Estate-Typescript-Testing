@@ -4,6 +4,7 @@ import Link from "next/link";
 import { closeModal } from "@/features/modal/modalSlice"; // Import the closeModal action correctly
 import { useDispatch, useSelector } from "react-redux";
 import { useState } from "react";
+import { setLogin } from "@/features/login/loginSlice";
 
 const LoginSignup = () => {
   const dispatch = useDispatch();
@@ -36,8 +37,9 @@ const LoginSignup = () => {
           body: JSON.stringify(credentials)
         });
         const data = await response.json();
-        if (data.isLoggedIn) {
-          dispatch(setLogin({ username: credentials.username, isLoggedIn: true }));
+        if (data.status==='success') {
+          dispatch(setLogin({ username: credentials.username, isLoggedIn: true ,role:data.role}));
+          dispatch(closeModal())
         }
       } catch (error) {
         console.error('Login failed:', error);

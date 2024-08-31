@@ -6,13 +6,17 @@ import PopupSignInUp from "@/components/commons/PopupSignInUp";
 import Wrapper from "@/components/layout/Wrapper";
 import { Provider } from "react-redux";
 import { store } from "@/store/store"
+import MobileMenu from "@/components/mobileMenu/Mobilemenu"
+// import Hero from '@/components/hero/Hero'
 
 export default function GlobalLayout({ children }: { children: React.ReactNode }) {
     return (
         <Wrapper>
             <Provider store={store}>
                 <Navbar />
+                <MobileMenu/>
                 <PopupSignInUp />
+                {/* <Hero/> */}
                 {children}
                 <section className="footer_one">
                     <div className="container">
